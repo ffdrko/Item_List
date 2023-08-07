@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Item Add Form</title>
+  <link rel="stylesheet" href="/css/index.css">
+</head>
+<body>
+  <h1>Item Add Form</h1>
+  <form action="/item/add" method="post">
+    <label for="category">Category:</label>
+    <select id="category" name="category">
+      <% for (const category of categories) { %>
+        <option value="<%= category %>"><%= category %></option>
+      <% } %>
+    </select>
+    <br>
+
+    <label for="title">Title:</label>
+    <input type="text" id="title" name="title" required>
+    <br>
+
+    <label for="description">Description:</label>
+    <textarea id="description" name="description" required></textarea>
+    <br>
+
+    <label for="active">Active:</label>
+    <input type="checkbox" id="active" name="active">
+    <br>
+
+    <input type="submit" value="Add Item">
+  </form>
+</body>
+</html>
